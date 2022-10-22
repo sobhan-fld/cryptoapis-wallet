@@ -1,4 +1,6 @@
 import cryptoapis
+
+
 print("possible values:\ncoins: bitcoin,ethereum,tron\nnetwork: testnet,goerli,Nile\n")
 s1 = input("1-Coins\n2-Tokens\n")
 print()
@@ -37,10 +39,16 @@ if s1 == '1':
 
 
 elif s1 == '2':
-    s2 = input("1-Transaction details\n")
+    s2 = input("1-withdrawal\n")
 
     if s2 == '1':
-        coin = input("enter network's coin")
+        coin = input("enter network's coin: ")
+        network = input("enter the network: ")
+        senderaddress = input("enter the sender address: ")
+        symbol = input("enter the symbol: ")
+        rcaddress = input("recipient address: ")
+        amount = input("enter the amount: ")
+        cryptoapis.token_withdrawal(coin, network, senderaddress, symbol, rcaddress, amount)
 
 
 
