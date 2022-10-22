@@ -1,7 +1,7 @@
 import json
 import requests
 import api
-import contracts as sc
+import contracts
 
 walletID = "620bb9632b0df000061a180d"
 
@@ -44,12 +44,13 @@ def withdrawal(coin, network, amount, address):
     print(json.dumps(x.json(), indent=4))
 
 
-def token_withdrawal(coin, network, senderaddress, symbol, rcaddress, amount):
+def token_withdrawal(coin, network, senderaddress, rcaddress, amount, symbol):
     url= "/wallet-as-a-service/wallets/"+walletID+"/"+coin+"/"+network+"/addresses/"+senderaddress+"/feeless-token-transaction-requests"
 
-    smartcontract = sc.tron_contracts(symbol)
+    smartcontract = contracts.tron_contracts(symbol)
+    print(smartcontract)
 
-    payload = '{"data":{"item":{"amount":"'+amount+'","feeLimit":"1000000000","recipientAddress":"'+rcaddress+'","tokenIdentifier":"'+smartcontract+'"}}}'
+    payload = '{"data":{"item":{"amount":"'+amount+'","feeLimit":"1000000000","recipientAddress":"'+rcaddress+'","tokenIdentifier":"TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"}}}'
 
     x = api.apipost(url,payload)
 

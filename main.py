@@ -1,6 +1,7 @@
 import cryptoapis
+import contracts
 
-
+print(contracts.tron_contracts("BTT"))
 print("possible values:\ncoins: bitcoin,ethereum,tron\nnetwork: testnet,goerli,Nile\n")
 s1 = input("1-Coins\n2-Tokens\n")
 print()
@@ -39,16 +40,14 @@ if s1 == '1':
 
 
 elif s1 == '2':
-    s2 = input("1-withdrawal\n")
+    s2 = input("1-withdrawal tron tokens\n")
 
     if s2 == '1':
         coin = input("enter network's coin: ")
         network = input("enter the network: ")
         senderaddress = input("enter the sender address: ")
         symbol = input("enter the symbol: ")
+        symbol = symbol.upper()
         rcaddress = input("recipient address: ")
         amount = input("enter the amount: ")
-        cryptoapis.token_withdrawal(coin, network, senderaddress, symbol, rcaddress, amount)
-
-
-
+        cryptoapis.token_withdrawal(coin, network, senderaddress, rcaddress, amount, symbol)
