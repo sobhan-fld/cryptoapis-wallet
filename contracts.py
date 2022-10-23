@@ -2,9 +2,9 @@
 
 def tron_contracts(symbol):
     if symbol == "BTT":
-        contract = "TAFjULxiVgT4qWk6UZwjqwZXTSaGaqnVp4"
+        contract = "TNuoKL1ni8aoshfFL1ASca1Gou9RXwAzfn"
 
     elif symbol == "USDT":
-        contract = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+        contract = "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj"
 
     return contract

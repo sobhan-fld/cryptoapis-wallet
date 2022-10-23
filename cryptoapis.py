@@ -56,3 +56,10 @@ def token_withdrawal(coin, network, senderaddress, rcaddress, amount, symbol):
 
     print(x)
     print(json.dumps(x.json(), indent=4))
+
+def wallet_assets():
+    url = "/wallet-as-a-service/wallets/all-assets"
+
+    x = api.apiget(url)
+    print(x)
+    print(json.dumps(x.json(), indent=4))

@@ -9,7 +9,8 @@ if s1 == '1':
     s2 = input("1-Generate deposit address\n"
                "2-list Depoit addresses\n"
                "3-Wallet transactions\n"
-               "4-Withdraw\n")
+               "4-Withdraw\n"
+               "5-Wallet assets (admin)\n")
     if s2 == '1':
         coin = input("coin: ")
         coin = coin.lower()
@@ -35,6 +36,8 @@ if s1 == '1':
         amount = input("amount: ")
         address = input("address: ")
         cryptoapis.withdrawal(coin, network, amount, address)
+    elif s2 == '5':
+        cryptoapis.wallet_assets()
     else:
         print("Error")
 
