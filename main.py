@@ -43,14 +43,18 @@ if s1 == '1':
 
 
 elif s1 == '2':
-    s2 = input("1-withdrawal tron tokens\n")
+    s2 = input("1-withdrawal tron tokens\n"
+               "2-withdrawal eth token\n")
 
     if s2 == '1':
-        coin = input("enter network's coin: ")
-        network = input("enter the network: ")
         senderaddress = input("enter the sender address: ")
         symbol = input("enter the symbol: ")
         symbol = symbol.upper()
         rcaddress = input("recipient address: ")
         amount = input("enter the amount: ")
-        cryptoapis.token_withdrawal(coin, network, senderaddress, rcaddress, amount, symbol)
+        cryptoapis.token_withdrawal_tron(senderaddress, rcaddress, amount, symbol)
+
+    if s2 == '2':
+        symbol = input("enter the symbol: ")
+        symbol = symbol.upper()
+

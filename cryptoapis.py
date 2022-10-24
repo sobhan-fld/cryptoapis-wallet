@@ -44,13 +44,13 @@ def withdrawal(coin, network, amount, address):
     print(json.dumps(x.json(), indent=4))
 
 
-def token_withdrawal(coin, network, senderaddress, rcaddress, amount, symbol):
-    url= "/wallet-as-a-service/wallets/"+walletID+"/"+coin+"/"+network+"/addresses/"+senderaddress+"/feeless-token-transaction-requests"
+def token_withdrawal_tron(senderaddress, rcaddress, amount, symbol):
+    url= "/wallet-as-a-service/wallets/"+walletID+"/tron/nile/addresses/"+senderaddress+"/feeless-token-transaction-requests"
 
     smartcontract = contracts.tron_contracts(symbol)
     print(smartcontract)
 
-    payload = '{"data":{"item":{"amount":"'+amount+'","feeLimit":"1000000000","recipientAddress":"'+rcaddress+'","tokenIdentifier":"TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"}}}'
+    payload = '{"data":{"item":{"amount":"'+amount+'","feeLimit":"1000000000","recipientAddress":"'+rcaddress+'","tokenIdentifier":"'+smartcontract+'"}}}'
 
     x = api.apipost(url,payload)
 
