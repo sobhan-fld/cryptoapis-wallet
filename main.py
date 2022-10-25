@@ -62,3 +62,5 @@ elif s1 == '2':
         amount = input("enter the amount: ")
         cryptoapis.token_withdrawal_eth(senderaddress, symbol, amount, rcaddress)
 
+    else:
+        print("Error")
