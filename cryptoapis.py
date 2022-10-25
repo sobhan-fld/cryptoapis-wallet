@@ -63,3 +63,15 @@ def wallet_assets():
     x = api.apiget(url)
     print(x)
     print(json.dumps(x.json(), indent=4))
+
+def token_withdrawal_eth(senderaddress, symbol, amount, recipientAddress,):
+    url = "/wallet-as-a-service/wallets/"+walletID+"/ethereum/goerli/addresses/"+senderaddress+"/token-transaction-requests"
+
+    smartcontract = contracts.eth_contracts(symbol)
+
+    payload = '{"data":{"item":{"amount":"'+amount+'","feePriority":"standard","recipientAddress":"'+recipientAddress+'","tokenIdentifier":"'+smartcontract+'"}}}'
+
+    x = api.apipost(url, payload)
+
+    print(x)
+    print(json.dumps(x.json(), indent=4))

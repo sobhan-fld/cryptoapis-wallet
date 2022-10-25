@@ -54,7 +54,11 @@ elif s1 == '2':
         amount = input("enter the amount: ")
         cryptoapis.token_withdrawal_tron(senderaddress, rcaddress, amount, symbol)
 
-    if s2 == '2':
+    elif s2 == '2':
         symbol = input("enter the symbol: ")
         symbol = symbol.upper()
+        senderaddress = input("enter the sender address: ")
+        rcaddress = input("recipient address: ")
+        amount = input("enter the amount: ")
+        cryptoapis.token_withdrawal_eth(senderaddress, symbol, amount, rcaddress)
 
