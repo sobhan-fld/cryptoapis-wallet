@@ -1,7 +1,7 @@
 import requests
 
-
-apikey = "f96ef2c9cd5a01bed860f03a359dc4e1386a42c4"
+#put the api key here
+apikey = ""
 baseurl = "https://rest.cryptoapis.io"
 
 def apipost(url,payload):
